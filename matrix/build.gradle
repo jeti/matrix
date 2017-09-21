@@ -1,0 +1,39 @@
+apply plugin: 'java'
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'io.jeti.linalg:linalg:1.0.2'
+    testCompile 'junit:junit:4.12'
+}
+
+ext {
+
+    bintrayRepo = 'java'
+    bintrayName = 'matrix'
+
+    publishedGroupId = 'io.jeti.linalg'
+    libraryName = 'matrix'
+    artifact = 'matrix'
+
+    libraryDescription = 'A concrete, pure-java implementation of the Jeti matrix interfaces.'
+
+    siteUrl = 'https://github.com/jeti/matrix'
+    gitUrl = 'https://github.com/jeti/matrix.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'mholzel'
+    developerName = 'Matthew Holzel'
+    developerEmail = 'matthew.holzel@gmail.com'
+
+    organization = 'mholzel'
+
+    licenseName = 'The Apache Software License, Version 2.0'  //Example for license
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+
+}
+
+//These two remote files contain Bintray configuration as described above.
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/install.gradle'
+apply from: 'https://raw.githubusercontent.com/quangctkm9207/template-files/master/android/gradle/bintray.gradle'
