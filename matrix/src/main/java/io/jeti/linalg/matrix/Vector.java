@@ -90,6 +90,39 @@ public class Vector implements Vec<Vector>, Gettable1<Double> {
         this.stride = stride;
     }
 
+    /**
+     * @return A {@link Vec} with the specified number of elements, where all of
+     *         the elements are set to 1.
+     */
+    public static Vector ones(long elems) {
+        return new Vector((int) elems, index -> 1d);
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where all of
+     *         the elements are set to 0.
+     */
+    public static Vector zeros(long elems) {
+        return new Vector((int) elems, index -> 0d);
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where each
+     *         entry is a uniform random number in [0,1].
+     */
+    public static Vector rand(long elems) {
+        return new Vector((int) elems, index -> random.nextDouble());
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where each
+     *         entry is a Gaussian random number drawn from a distribution with
+     *         mean 0 and variance 1.
+     */
+    public static Vector randn(long elems) {
+        return new Vector((int) elems, index -> random.nextGaussian());
+    }
+
     /*
      * --------------------------------------------------
      *

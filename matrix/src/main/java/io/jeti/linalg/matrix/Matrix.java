@@ -113,6 +113,47 @@ public class Matrix implements Mat<Matrix>, Gettable2<Double> {
         this.colStride = colStride;
     }
 
+    /**
+     * @return A (rows x cols) Matrix, where all values are set to 1.
+     */
+    public static Matrix ones(long rows, long cols) {
+        /*
+         * Note that we need this dumb hack of declaring one of the inputs as
+         * "not an int" so that we can have a static and nonstatic method with
+         * the same name.
+         */
+        return new Matrix((int) rows, (int) cols, (row, col) -> 1d);
+    }
+
+    /**
+     * @return A (rows x cols) Matrix, where all values are set to 0.
+     */
+    public static Matrix zeros(long rows, long cols) {
+        return new Matrix((int) rows, (int) cols, (row, col) -> 0d);
+    }
+
+    /**
+     * @return A (rows x rows) identity Matrix.
+     */
+    public static Matrix I(long rows) {
+        return new Matrix((int) rows, (int) rows, (row, col) -> row == col ? 1d : 0d);
+    }
+
+    /**
+     * @return A (rows x cols) Matrix of uniform random number in [0,1].
+     */
+    public static Matrix rand(long rows, long cols) {
+        return new Matrix((int) rows, (int) cols, (row, col) -> random.nextDouble());
+    }
+
+    /**
+     * @return A (rows x cols) Matrix of Gaussian random number drawn from a
+     *         distribution with mean 0 and variance 1.
+     */
+    public static Matrix randn(long rows, long cols) {
+        return new Matrix((int) rows, (int) cols, (row, col) -> random.nextGaussian());
+    }
+
     /*
      * --------------------------------------------------
      *
