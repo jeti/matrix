@@ -1,8 +1,8 @@
-apply plugin: 'java'
+apply plugin: 'java-library'
 
 dependencies {
-    compile 'io.jeti.linalg:linalg:1.0.2'
-    testCompile 'junit:junit:4.12'
+    compile 'io.jeti.linalg:linalg:1.0.3'
+    testImplementation 'junit:junit:4.12'
 }
 
 ext {
@@ -19,7 +19,7 @@ ext {
     siteUrl = 'https://github.com/jeti/matrix'
     gitUrl = 'https://github.com/jeti/matrix.git'
 
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.3'
 
     developerId = 'mholzel'
     developerName = 'Matthew Holzel'

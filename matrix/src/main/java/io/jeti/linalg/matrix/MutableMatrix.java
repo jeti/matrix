@@ -113,6 +113,42 @@ public class MutableMatrix implements MutMat<MutableMatrix>, Settable2<Double> {
         this.colStride = colStride;
     }
 
+    /**
+     * @return A (rows x cols) Matrix, where all values are set to 1.
+     */
+    public static MutableMatrix ones(int rows, int cols) {
+        return new MutableMatrix(rows, cols, (row, col) -> 1d);
+    }
+
+    /**
+     * @return A (rows x cols) Matrix, where all values are set to 0.
+     */
+    public static MutableMatrix zeros(int rows, int cols) {
+        return new MutableMatrix(rows, cols, (row, col) -> 0d);
+    }
+
+    /**
+     * @return A (rows x rows) identity Matrix.
+     */
+    public static MutableMatrix I(int rows) {
+        return new MutableMatrix(rows, rows, (row, col) -> row == col ? 1d : 0d);
+    }
+
+    /**
+     * @return A (rows x cols) Matrix of uniform random number in [0,1].
+     */
+    public static MutableMatrix rand(int rows, int cols) {
+        return new MutableMatrix(rows, cols, (row, col) -> random.nextDouble());
+    }
+
+    /**
+     * @return A (rows x cols) Matrix of Gaussian random number drawn from a
+     *         distribution with mean 0 and variance 1.
+     */
+    public static MutableMatrix randn(int rows, int cols) {
+        return new MutableMatrix(rows, cols, (row, col) -> random.nextGaussian());
+    }
+
     /*
      * --------------------------------------------------
      *

@@ -90,6 +90,39 @@ public class MutableVector implements MutVec<MutableVector>, Settable1<Double> {
         this.stride = stride;
     }
 
+    /**
+     * @return A {@link Vec} with the specified number of elements, where all of
+     *         the elements are set to 1.
+     */
+    public static MutableVector ones(int elems) {
+        return new MutableVector(elems, index -> 1d);
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where all of
+     *         the elements are set to 0.
+     */
+    public static MutableVector zeros(int elems) {
+        return new MutableVector(elems, index -> 0d);
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where each
+     *         entry is a uniform random number in [0,1].
+     */
+    public static MutableVector rand(int elems) {
+        return new MutableVector(elems, index -> random.nextDouble());
+    }
+
+    /**
+     * @return A {@link Vec} with the specified number of elements, where each
+     *         entry is a Gaussian random number drawn from a distribution with
+     *         mean 0 and variance 1.
+     */
+    public static MutableVector randn(int elems) {
+        return new MutableVector(elems, index -> random.nextGaussian());
+    }
+
     /*
      * --------------------------------------------------
      *
