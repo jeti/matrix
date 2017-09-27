@@ -1,23 +1,25 @@
 package io.jeti.linalg.matrix;
 
+import java.io.Serializable;
+
 /**
  * The sole purpose of these interfaces is to enable all of the concrete classes
  * to have either a concrete implementation of {@link Tsr} OR some List as the
  * field which holds the data. This is the simplest way of allowing the
  * {@link Tsr} implementations to permit views. Specifically, suppose we have a
- * {@link Vector} with the data {0,1,2,3,4} and we want a
- * view of the subvector {1,2,3}. So that we really return a view of the data
- * (not just a copy), we need to pass the original list {0,1,2,3,4} to the new
- * vector and tell it to "get" its elements from that original list. Now the
- * problem comes in when we try to get a view of the new vector {1,2,3}. For
- * instance, let's suppose we want to pull off the first two elements. Either we
- * transform the indices and stride to handle this, or we create a wrapper like
- * this one. Transforming the indices is preferable from a speed point of view,
- * but more difficult to compute. So we chalk that up to "future work".
+ * {@link Vector} with the data {0,1,2,3,4} and we want a view of the subvector
+ * {1,2,3}. So that we really return a view of the data (not just a copy), we
+ * need to pass the original list {0,1,2,3,4} to the new vector and tell it to
+ * "get" its elements from that original list. Now the problem comes in when we
+ * try to get a view of the new vector {1,2,3}. For instance, let's suppose we
+ * want to pull off the first two elements. Either we transform the indices and
+ * stride to handle this, or we create a wrapper like this one. Transforming the
+ * indices is preferable from a speed point of view, but more difficult to
+ * compute. So we chalk that up to "future work".
  */
 interface Gettable {
 
-    interface Sizeable {
+    interface Sizeable extends Serializable {
         int size();
     }
 
