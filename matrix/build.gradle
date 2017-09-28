@@ -1,7 +1,7 @@
 apply plugin: 'java-library'
 
 dependencies {
-    compile 'io.jeti:linalg:1.0.4'
+    compile 'io.jeti.linalg:linalg:1.0.3'
     testImplementation 'junit:junit:4.12'
 }
 
