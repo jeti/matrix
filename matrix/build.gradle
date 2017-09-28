@@ -1,7 +1,7 @@
 apply plugin: 'java-library'
 
 dependencies {
-    compile 'io.jeti.linalg:linalg:1.0.3'
+    compile 'io.jeti:linalg:1.0.4'
     testImplementation 'junit:junit:4.12'
 }
 
@@ -10,7 +10,7 @@ ext {
     bintrayRepo = 'java'
     bintrayName = 'matrix'
 
-    publishedGroupId = 'io.jeti.linalg'
+    publishedGroupId = 'io.jeti'
     libraryName = 'matrix'
     artifact = 'matrix'
 
@@ -19,7 +19,7 @@ ext {
     siteUrl = 'https://github.com/jeti/matrix'
     gitUrl = 'https://github.com/jeti/matrix.git'
 
-    libraryVersion = '1.0.4'
+    libraryVersion = '1.0.5'
 
     developerId = 'mholzel'
     developerName = 'Matthew Holzel'
