@@ -1,7 +1,8 @@
-package io.jeti.linalg.matrix;
+package io.jeti.matrix;
 
-import io.jeti.linalg.matrix.Gettable.Gettable1;
+import io.jeti.linalg.matrix.Vec;
 import io.jeti.linalg.matrix.utils.Check;
+import io.jeti.matrix.Gettable.Gettable1;
 import java.util.ArrayList;
 import java.util.List;
 

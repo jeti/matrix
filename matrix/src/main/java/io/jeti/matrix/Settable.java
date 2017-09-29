@@ -1,11 +1,11 @@
-package io.jeti.linalg.matrix;
+package io.jeti.matrix;
 
-import io.jeti.linalg.matrix.Gettable.Gettable1;
-import io.jeti.linalg.matrix.Gettable.Gettable2;
-import io.jeti.linalg.matrix.Gettable.Gettable3;
-import io.jeti.linalg.matrix.Gettable.Gettable4;
-import io.jeti.linalg.matrix.Gettable.Gettable5;
-import io.jeti.linalg.matrix.Gettable.Gettable6;
+import io.jeti.matrix.Gettable.Gettable1;
+import io.jeti.matrix.Gettable.Gettable2;
+import io.jeti.matrix.Gettable.Gettable3;
+import io.jeti.matrix.Gettable.Gettable4;
+import io.jeti.matrix.Gettable.Gettable5;
+import io.jeti.matrix.Gettable.Gettable6;
 
 /**
  * This is essentially {@link Gettable} with setters.

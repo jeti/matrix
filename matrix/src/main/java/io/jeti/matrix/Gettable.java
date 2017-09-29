@@ -1,5 +1,6 @@
-package io.jeti.linalg.matrix;
+package io.jeti.matrix;
 
+import io.jeti.linalg.matrix.Tsr;
 import java.io.Serializable;
 
 /**
